@@ -1,23 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Scheduler from './components/Scheduler';
+import moment from 'moment'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Scheduler 
+      startHour={moment().hours(9).minutes(0).seconds(0)}
+      endHour={moment().hours(17).minutes(0).seconds(0)}
+      availableHours={[[], [], [], [], [], [], []]}
+      hospitalId="id_of_the_hospital"
+      />
     </div>
   );
 }
